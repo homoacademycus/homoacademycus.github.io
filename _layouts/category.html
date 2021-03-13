@@ -1,0 +1,30 @@
+---
+layout: default
+---
+<div class="home">
+
+    {% assign category = page.category | default: page.title %}
+    <div class="posts">
+        {% for post in site.categories[category] %}
+        <div class="post-teaser">
+            <header>
+                <h1>
+                    <a class="post-link" href="{{ post.url | relative_url }}">
+                        {{ post.title }}
+                    </a>
+                </h1>
+                <p class="meta">
+                    {{ post.date | date: "%B %-d, %Y" }}
+                </p>
+            </header>
+            <div class="excerpt">
+                {{ post.excerpt }}
+                <a class="button" href="{{ post.url | relative_url }}">
+                    {{ site.theme_settings.str_continue_reading }}
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>

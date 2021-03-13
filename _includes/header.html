@@ -1,0 +1,68 @@
+<header class="site-header">
+  <div class="branding">
+    {% if site.theme_settings.gravatar %}
+    <a href="{{ site.baseurl }}/">
+      <img
+        class="avatar"
+        src="https://secure.gravatar.com/avatar/{{ site.theme_settings.gravatar }}?s=100"
+        alt=""
+      />
+    </a>
+    {% elsif site.theme_settings.avatar %}
+    <a href="{{ site.baseurl }}/">
+      <img
+        class="avatar"
+        src="{{ site.baseurl }}/{{ site.theme_settings.avatar }}"
+        alt=""
+      />
+    </a>
+    {% endif %}
+    <h1 class="site-title">
+      <a href="{{ site.baseurl }}/">{{ site.theme_settings.title }}</a>
+    </h1>
+  </div>
+  <nav class="site-nav">
+    <ul>
+      <!-- Search bar -->
+      {% if site.theme_settings.search %}
+      <li display="inline-block" float="left">
+        <form action="{{ site.baseurl }}/search.html" method="get">
+          <input
+            type="text"
+            id="search-box"
+            name="query"
+            placeholder="Search"
+            class=""
+          />
+          <input type="submit" value="search" class="button" />
+        </form>
+      </li>
+      {% endif %}
+    </ul>
+    <ul>
+      {% assign pages_list = site.pages %} {% for node in pages_list %} {% if
+      node.title != null %} {% if node.layout == "category" %}
+      <li>
+        <a
+          class="category-link {% if page.url == node.url %} active{% endif %}"
+          href="{{ site.baseurl }}{{ node.url }}"
+          >{{ node.title }}</a
+        >
+      </li>
+      {% endif %} {% endif %} {% endfor %}
+      <li>
+        <a href="https://github.com/homoacademycus/scripts">Develop Scripts</a>
+      </li>
+      <li>
+        <a href="https://homoacademycus.github.io/regular-expression-tester"
+          >RegExp Tester</a
+        >
+      </li>
+      <li>
+        <a href="https://homoacademycus.github.io/ip-calculator"
+          >IP Calculator</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>

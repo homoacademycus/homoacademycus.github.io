@@ -1,0 +1,103 @@
+.site-header {
+  @extend %padding-small;
+  background: $brand-color;
+  border-bottom: 1px solid $border-color;
+  display: inline-block;
+  width: 100%;
+
+  a {
+    color: $header-link-color;
+  }
+
+  .avatar {
+    height: 2em;
+    width: 2em;
+    float: left;
+    margin-top: -3px;
+    border-radius: 0.2em;
+    margin-right: 1em;
+  }
+
+  .site-title {
+    float: left;
+    font-weight: bold;
+    font-size: 1em;
+    line-height: 1.5;
+  }
+
+  .site-nav {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      line-height: 1.5;
+      display: block;
+      text-align: right;
+    }
+    li {
+      display: inline;
+      margin-right: 1em;
+      vertical-align: middle;
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+    @media (max-width: 1100px) {
+      ul {
+        display: inline-block;
+        padding-top: $padding-small;
+        text-align: left;
+        width: 100%;
+      }
+    }
+  }
+
+    /* --- Search form --- */
+    form {
+        border: 0;
+        border-bottom: 2px solid $search-color;
+        outline: 0;
+        width: 100%;
+        float: left;
+
+        *:focus {
+            outline: none;
+        }
+
+        input{
+            &[type=text] {
+                box-sizing: border-box;
+                border: 0;
+                outline: 0;
+                margin: 0.3rem;
+                padding: 0.3rem;
+                width: 50%;
+                color: $search-color;
+                background-color: $input-background-color;
+            }
+            &[type=submit] {
+              box-sizing: border-box;
+              border: solid;
+              border-radius: 2rem;
+              font-size: 1.0rem;
+              margin: 0.3rem;
+              padding: 0.3rem;
+              background-color: $link-color;
+              color: $search-color;
+          }
+            &::-moz-placeholder {
+                color: $search-color;
+                opacity: 1;
+            }
+
+            &:-ms-input-placeholder, &::-webkit-input-placeholder {
+                color: $search-color;
+            }
+            .button {
+              
+           }
+        }
+
+
+    }
+}
