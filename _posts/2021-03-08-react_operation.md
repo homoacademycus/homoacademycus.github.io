@@ -13,7 +13,7 @@ const tags = Array(8).fill(0).map((value, index) => (
 - typeof( index ) == int
 - typeof( string+int ) == string
 
-# state is available with any Object. 
+# state is available with Dictionary, not Array!
 ```
 const initState_map = {
     addr_size: "",
